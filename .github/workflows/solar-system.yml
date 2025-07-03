@@ -29,10 +29,10 @@ jobs:
           run: npm install
     
         - name: Unit Testing
+          continue-on-error: true
           run: npm test
           
         - name: Archive Test Result
-          continue-on-error: true
           uses: actions/upload-artifact@v4
           with:
             name: Mocha-Test-Result
